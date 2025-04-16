@@ -63,6 +63,22 @@ def map_station(request):
     return render(request, 'map_station.html', context)
 
 
+def map_incident(request):
+    fireIncident = Locations.objects.values('name', 'latitude', 'longitude')
+
+    for fs in fireIncident:
+        fs['latitude'] = float(fs['latitude'])
+        fs['longitude'] = float(fs['longitude'])
+
+    fireIncident_list = list(fireIncident)
+
+    context = {
+        'fireIncident': fireIncident_list,
+    }
+
+    return render(request, 'map_incident.html', context)
+
+
 def LineCountbyMonth(request):
 
     current_year = datetime.now().year
