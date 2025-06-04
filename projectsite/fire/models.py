@@ -54,9 +54,8 @@ class Firefighters(BaseModel):
         ('Battalion Chief', 'Battalion Chief'),)
     name = models.CharField(max_length=150)
     rank = models.CharField(max_length=150)
-    experience_level = models.CharField(max_length=150)
-    station = models.CharField(
-        max_length=45, null=True, blank=True, choices=XP_CHOICES)
+    experience_level = models.CharField(max_length=150, choices=XP_CHOICES)
+    station = models.ForeignKey(FireStation, on_delete=models.SET_NULL, null=True, blank=True)
 
 
 class FireTruck(BaseModel):

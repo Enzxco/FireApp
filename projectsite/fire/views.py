@@ -14,6 +14,8 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.db.models import Q
 
+from django.contrib import messages
+
 
 class HomePageView(ListView):
     model = Locations
@@ -234,7 +236,7 @@ class firestationUpdateView(UpdateView):
     def form_valid(self, form):
         name = form.cleaned_data['name']
         messages.success(
-            self.request, f" '{name} Fire Station added successfully.'")
+            self.request, f"'{name}' Fire Station updated successfully.")
         return super().form_valid(form)
 
 
@@ -246,9 +248,8 @@ class firestationDeleteView(DeleteView):
     def form_valid(self, form):
         name = self.object.name
         messages.success(
-            self.request, f" {name} Firestation deleted successfully.")
-        return super().form_valid(form)
-
+            self.request, f"'{name}' Fire Station deleted successfully.")
+        return super().form_valid(self)
 
 # Incident CRUD Views
 
