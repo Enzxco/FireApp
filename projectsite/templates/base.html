@@ -52,7 +52,7 @@
         <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
           <div class="container-fluid">
             <div class="collapse" id="search-nav">
-              
+
             </div>
             <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
             </ul>
@@ -146,7 +146,7 @@
                         <span class="sub-item">Buttons</span>
                       </a>
                     </li>
-                    
+
                   </ul>
                 </div>
               </li>
@@ -172,40 +172,41 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a href="#">
+                <a href="{% url 'station-list' %}">
                   <i class="fas fa-fire-extinguisher"></i>
                   <p>Fire Stations</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#">
+                <a href="{% url 'incident-list' %}">
                     <i class="fas fa-fire"></i>
                     <p>Incidents</p>
                 </a>
             </li>
             <li class="nav-item">
-              <a href="#"fas fa-map-signs"></i>
+              <a href="{% url 'loc-list' %}">
+                <i class="fas fa-map-signs"></i>
                 <p>Location</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#">
+              <a href="{% url 'weather-list' %}">
                 <i class="fas fa-cloud" style="color: gray;"></i>
                 <p>Weather Conditions</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#">
+              <a href="{% url 'fireTruck-list' %}">
                 <i class="fas fa-truck" style="color: gray;"></i>
                 <p>FireTruck</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#">
+              <a href="{% url 'firefighters-list' %}">
                   <i class="fas fa-fire" style="color: gray;"></i>
                   <p>Firefighters</p>
               </a>
-            </li>          
+            </li>
               <li class="nav-item">
                 <a data-toggle="collapse" href="#charts">
                   <i class="far fa-chart-bar"></i>
@@ -268,7 +269,7 @@
     <script src="{% static 'js/plugin/sweetalert/sweetalert.min.js' %}"></script>
     <script src="{% static 'js/atlantis.min.js' %}"></script>
 
-    
+
 
     {% block chart %}
 
